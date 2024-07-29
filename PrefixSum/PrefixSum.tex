@@ -1,0 +1,47 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage[english]{babel}
+\usepackage{algpseudocode}
+\usepackage{algorithm}
+\usepackage{hyperref}
+\title{Prefix Sum}
+\author{Dimael Rivas Chavez}
+\date{July 2024}
+\begin{document}
+	\maketitle
+	\section{Algorithm Explanation}
+	Prefix sum can be taken as dp, and one of its applications is in range queries. This algorithm basically saves the sum of range [0,..,$A_i$], in $P_{i+1}$ .
+	For example:
+	
+	Let A be our array and P our prefix sum array.
+	
+	\begin{algorithm}
+		\begin{algorithmic}[0]
+			\caption{Prefix Sum build-up}
+			\Require $A, P$
+			\For {$i = 1$ \textbf{to} $n$}
+				\State $P_i \gets P_{i-1} + A_{i-1}$
+			\EndFor
+		\end{algorithmic}
+	\end{algorithm}
+	Assuming those arrays are 0-indexed.
+	
+	\section{Problems}
+	\subsection{Optimizations for queries on all sub-arrays}
+	Those problems use the same approach:
+	
+	\href{https://codeforces.com/problemset/problem/1398/C}{Problem 1}
+	
+	\href{https://codeforces.com/problemset/problem/1996/E}{Problem 2}
+	
+	The idea here is to make the prefix sum satisfies the property of the query by making that if is $P_{l-1} = P_r$ is true, then $A[l,...,r]$ satisfies the query.
+	
+	The reason of why it is important to have an equality of $P_{l-1} = P{r}$ (do not know if it can be an extended equation) is that we can store it in a dictionary, so as we passing through r, we can ask in our dictionary all $P_{l-1}$ that are equal to our current $P_r$. Which reduces the complexity of calculating all sub-arrays $O(n^2)$ to $O(n)$ or $O(n\log(n))$ whether you are using a hash map or a tree-structure.
+	
+	
+	
+\end{document}

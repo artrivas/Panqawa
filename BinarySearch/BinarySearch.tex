@@ -1,0 +1,42 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{algpseudocode}
+\usepackage{algorithm}
+\usepackage{amsmath}
+
+
+\title{Binary Search}
+\author{Dimael Rivas}
+\date{July 2024}
+
+\begin{document}
+	
+	\maketitle
+	
+	\section{Algorithm}
+	Binary search is an algorithm that finds an element in a sorted array in $\mathcal{O}(\log{}n)$, where n is the size of the array. This algorithm works by asking each time the middle of the array, so we get rid of a half of the array on each query.
+	
+	In a general way, this algorithm works if the following property is satisfied:
+	$$T(i) \leq T(i+1)$$
+	That means the data is divided into two parts, such that one part satisfies function T(i) and the other do not.
+	
+	\begin{algorithm}
+		\caption{Binary Search}
+		\begin{algorithmic}[0]
+			\Require $l, r, T$
+			\Ensure $ans$
+			\While {$l \leq r $}
+			\State $mid \gets l + \frac{r-l}{2}$
+			\If{T(mid) is true}
+			\State $r \gets mid$
+			\Else
+			\State $l \gets mid$
+			\EndIf
+			\EndWhile
+			\State $ans \gets T(l)$
+		\end{algorithmic}
+	\end{algorithm}
+	This pseudo-code may vary, because it all depends on the T function.
+	\section{Classic Problems}
+	
+\end{document}
