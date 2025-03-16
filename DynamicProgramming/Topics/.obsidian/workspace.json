@@ -1,0 +1,181 @@
+{
+  "main": {
+    "id": "19b8a213f1587e50",
+    "type": "split",
+    "children": [
+      {
+        "id": "e92e9b2fd1e3dbac",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "4d5fa3e05f6017a4",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "New tab"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "649f9a85d9a3211f",
+    "type": "split",
+    "children": [
+      {
+        "id": "986a04844022ba0d",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "f5f09fbb14370297",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "4ece16f92c633a55",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "b55989e953fb68a1",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "addb936f9d78c012",
+    "type": "split",
+    "children": [
+      {
+        "id": "3818481095ef807c",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "cbaf50ad2c2edaf7",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Welcome.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for Welcome"
+            }
+          },
+          {
+            "id": "47704b60d04cdfa6",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Welcome.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from Welcome"
+            }
+          },
+          {
+            "id": "7b5b6f7dde315cad",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "3b7a5edef8113dc5",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Welcome.md"
+              },
+              "icon": "lucide-list",
+              "title": "Outline of Welcome"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "graph:Open graph view": false
+    }
+  },
+  "active": "f5f09fbb14370297",
+  "lastOpenFiles": [
+    "Untitled",
+    "Second Brain.md",
+    "Graph Theory/1.3 Paths and cycles.md",
+    "Graph Theory/1.2 The degree of a vertex.md",
+    "Graph Theory/1.1 Graphs notations.md",
+    "cf solutions/wadafa.md",
+    "Deep Learning (Victor)/Week 1.md",
+    "create a link.md",
+    "Welcome.md",
+    "Pasted image 20250305214650.png",
+    "Pasted image 20250305223728.png",
+    "Graph Theory",
+    "Deep Learning (Victor)",
+    "Masterclass/Mindfulness and Meditation.md",
+    "Masterclass",
+    "cf solutions"
+  ]
+}
