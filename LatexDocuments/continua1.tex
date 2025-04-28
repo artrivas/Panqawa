@@ -1,0 +1,85 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{amsmath,amsthm}
+\usepackage[english]{babel}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}{Corollary}[theorem]
+\newtheorem{lemma}[theorem]{Lemma}
+\title{Lisa de ejercicios - Teoría de grafos}
+\author{
+	Marcos Ayala \\ 
+	\and Juaquin Remon
+}
+\date{April 2025}
+
+\begin{document}
+	
+	\maketitle
+	
+	\section{Ejercicio 39}
+	
+	
+	
+	Sea $G$ un árbol con un número finito de vértices. Definimos una función $F(X)$ que toma como entrada un árbol 
+	$X$ y devuelve un subgrafo $X'$, donde:
+	$$X' = X-leaves(X)$$
+	mientras que $|V(X)| > 2$, caso contrario, devolverá X sin modificaciones. 
+	
+	Si aplicamos $F$ de forma iterativa sobre $G$ y sus sucesivos subgrafos, obtendremos finalmente un subgrafo $G'$ de $G$ tal que $|V(G')| \leq 2$ . Este subgrafo $G'$ representa el núcleo del árbol original y contiene a los vértices que minimizan la excentricidad, es decir, los centros del árbol.
+	
+	\section{Ejercicio 47}
+	\begin{lemma}\label{circuito}
+		Sea $C = \{v_0, e_1, v_1, e_2, ..., e_k, v_k = v_0\}$ un circuito, entonces
+		$\forall v \in V(C), \quad d_C(v) \equiv 0 \mod 2. $
+	\end{lemma}
+	Demostrando \ref{circuito}. Sea un vértice arbitrario $v \in V(C)$ y sus apariciones en $C$
+	$$v_{i_1} = v, v_{i_2} = v, ... v_{i_r} = v,$$  
+	notemos que por cada aparición de $v$, $v_x$ en el circuito, le corresponde dos aristas $e_x$ y $e_{x+1}$ a exepción cuando $x = k$, el cual su $e_{x+1} = e_1$. Por lo tanto $d_C(v) = 2 \cdot r$.
+	
+	Primero, supongamos que $G$ es euleriano, entonces existe un circuito $C$ que recorre todas las aristas en $E(G)$. Por lo tanto, podemos construir una partición trivial de las aristas $P = \{C\}$, el cual es una partición de las aristas en circuitos.
+	
+	Segundo, supongamos que $E(G)$ puede ser particionado en circuitos $P = \{C_1, C_2,..., C_k\}$ y $G$ es conexo. Notemos que para cualquier $v \in V(G)$, $d_G(v) = \sum_{C_i \in P} d_{C_i}(v)$. Entonces, usando \ref{circuito} sabemos que $d_{C_i} \equiv 0 \mod 2$, asi que 
+	$$d_G(v) \equiv 0 \mod 2$$
+	Además, 
+	$$d_G(v) \geq 2$$
+	ya que si $d_G(v) = 0$ entonces no ha aparecido en ningún circuito, por lo que $P$ no seria una partición de $G$, contradicción.
+	Por lo tanto, como para cualquier $v \in V(G)$, $d_G(v) >= 2$ y par, entonces $G$ es un grafo con circuito euleriano.
+	
+	\section{Ejercicio 59}
+	Supongamos por contradicción que $V(P) \cap V(Q) \cap V(R) = \emptyset$. 
+	Sea $$V(P) \cap V(Q) = \{a_1, a_2, ...\}$$ $$V(Q) \cap V(R) = \{b_1, b_2, ...\}$$$$V(P) \cap V(R) = C$$
+	Podemos construir un camino $S_1$ de $a_1$ a $b_1$ como un subcamino de $Q$, ya que $a_1, b_1 \in V(Q)$.
+	
+	Sea $s_1 = (a_1, ..., c_i)$ el subcamino de $P$ que minimiza la longitud del camino de $a_i$ a algún vértice de $C$. Note que $c_i$ es el único vértice de $C$ que pertenece a $s_1$, caso contrario no seria el subcamino mínimo. Sea $s_2 = (c_i, ..., b_i)$ el subcamino de $R$. Note que $c_i \notin S_1$, caso contrario, entonces $V(P) \cap V(Q) \cap V(R) \neq \emptyset$. Entonces podemos construir otro camino $S_2 = s_1 + s_2$, $S_2$ es un camino ya que $s_1 \cap s_2 = \{c_i\}$. Entonces pudimos construir dos caminos de $a_1$ a $b_1$, el primero $S_1$ que no contiene ningún vértice de $C$, y el segundo, $S_2$ que contiene a $c_i$. Por lo tanto, no existe un único camino en $T$ de $a_i$ a $b_i$, entonces $T$ no es un árbol, contradicción.
+	
+	
+	\section{Ejercicio 63}
+	
+	Supongamos por contradicción que una arista puente $e \in E(G)$, donde G es un grafo conexo, no existe en alguno de los árboles generadores $T$ de $G$. Entonces, $T$ no sería conexo, lo cual contradice la definición de árbol generador.
+	
+	
+	
+	\section{Ejercicio 73}
+	\subsection{G tiene un circuito hamiltoniano}
+	Según las condiciones del problema tenemos que los grados de cada conjunto son los siguientes: 
+	$$ d(v)_{v \in V_1} = |V_2| + |V_3| = 2|V_1| + 3|V_1|$$
+	$$ d(v)_{v \in V_2} = |V_1| + |V_3| = |V_1| + 3|V_1| $$
+	$$ d(v)_{v \in V_3} = |V_1| + |V_2| = |V_1| + 2|V_1| $$
+	
+	Asimismo, también sabemos que el grafo $G$ tiene una cantidad $6|V1|$ de nodos. Por ello, a partir del teorema de Dirac, el cual menciona que cualquier grafo con $n \geq 3 $ y $\delta(G) \geq \lceil \frac{n}{2} \rceil $ tiene un circuito hamiltoniano, podemos decir que G tiene un circuito hamiltoniano, pues $d(v)_{v \in V_1} = 5|V_1| \geq 3|V_1|$, $d(v)_{v \in V_2} = 4|V_1| \geq 3|V_1|$ y $d(v)_{v \in V_3} = 3|V_1| \geq 3|V_1|$ . 
+	
+	\subsection{G no tiene un circuito hamiltoniano}
+	Según las condiciones del problema tenemos que los grados de cada conjunto son los siguientes: 
+	$$ d(v)_{v \in V_1} = |V_2| + |V_3| = 2|V_1| + 3|V_1| + 1$$
+	$$ d(v)_{v \in V_2} = |V_1| + |V_3| = |V_1| + 3|V_1| +1 $$
+	$$ d(v)_{v \in V_3} = |V_1| + |V_2| = |V_1| + 2|V_1| $$
+	
+	Supongamos, por contradicción, que bajo la condición dada en el problema, el grafo \( G \) contiene un circuito hamiltoniano. Recordemos que, en un grafo bipartito completo, para que exista un ciclo hamiltoniano es necesario que ambos conjuntos de vértices tengan la misma cantidad de elementos.
+	
+	En nuestro caso, \( G \) es un grafo tripartito completo, cuyos conjuntos de vértices tienen tamaños \( |V_1| \), \( |V_2| = 2|V_1| \) y \( |V_3| = 3|V_1| + 1 \). Observamos que los vértices de \( V_1 \) y \( V_2 \) pueden conectarse completamente con los vértices de \( V_3 \). Sin embargo, debido a que \( V_3 \) tiene un vértice adicional, quedaría un vértice sin emparejar, imposibilitando así la construcción de un circuito hamiltoniano. Esto contradice nuestra suposición inicial, por lo tanto, \( G \) no contiene un circuito hamiltoniano.
+	
+\end{document}
+
+
+
+\end{document}
